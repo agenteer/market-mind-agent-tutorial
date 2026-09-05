@@ -1,0 +1,26 @@
+[project]
+name = "market-mind-agent-tutorial"
+version = "0.1.0"
+authors = [
+    {name = "Agenteer"},
+]
+description = "A hands-on tutorial for building AI agents"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0.0",
+    "openai-agents",
+    "yfinance",
+    "python-dotenv",
+    "click",
+]
+
+[project.scripts]
+market-mind = "src.cli.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# tells the build system to include the 'src' directory
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
